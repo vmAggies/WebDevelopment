@@ -1,0 +1,93 @@
+
+<!-- content -->
+    
+      <div class="padding">
+        <div class="box-bg margin-bot">
+          <div class="wrapper">
+            <div class="col-1">
+              <div class="box first">
+                <div class="pad">
+                  <div class="wrapper indent-bot"> <strong class="numb img-indent2"></strong>
+                    <div class="extra-wrap">
+                      <h3 class="color-1"><strong>Inter</strong>University</h3>
+                    </div>
+                  </div>
+                  <div class="wrapper">
+                    <div class="extra-wrap"> Analyze research grant awarded to various   
+                    <a href="/compareUniv">Universities </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="box second">
+                <div class="pad">
+                  <div class="wrapper indent-bot"> <strong class="numb img-indent2"></strong>
+                    <div class="extra-wrap">
+                      <h3 class="color-2"><strong>Advance</strong>Analysis</h3>
+                    </div>
+                  </div>
+                  <div class="wrapper">
+                    <div class="extra-wrap"> Analyze research grant awarded in year 2013 based on
+                    <a href="/cityGraph">City</a>,&nbsp;
+                    <a href="/agencyGraph">Funding Organization</a>,&nbsp;
+                    <a href="/programGraphs">Program</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="box third">
+                <div class="pad">
+                  <div class="wrapper indent-bot"> <strong class="numb img-indent2"></strong>
+                    <div class="extra-wrap">
+                      <h3 class="color-3"><strong>Over the</strong>Years</h3>
+                    </div>
+                  </div>
+                  <div class="wrapper">
+                    <div class="extra-wrap"> Check statistics from 2007 to 2013.
+                    <a href="/allUnivGraph">All California University</a>,&nbsp;
+                    <a href="/singleUniversity">Single University</a>,&nbsp;
+                    <a href="/agencyGraphOverYears">Funding Organization</a>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+<script type="text/javascript">
+ function onclickForm(formId) {
+		var form = document.getElementById(formId);
+		if (form) {
+			form.addEventListener('click', function(e) {
+				var target = e.target;
+				if (target && target.nodeName === 'A') {
+					console.log(form);
+					form.submit();
+				}
+			});
+		}
+	}
+ function setupForm(id, type) {
+		var form = document.getElementById(id);
+		if (form) {
+			form.addEventListener('click',
+				function(e) {
+					var target = e.target, 
+						department = document.getElementById(type), 
+						value;
+					if (target && target.nodeName === 'A' || target.nodeName === 'INPUT') {
+						value = target.getAttribute('data-' + type);
+						if (department && value) {
+							department.value = value;
+						}
+						form.submit();
+					}
+				}
+			);
+		}
+	}
+</script>        

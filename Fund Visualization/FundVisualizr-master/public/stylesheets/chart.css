@@ -1,0 +1,28 @@
+#chartdiv {
+	width:100%;
+	margin:auto;
+	height:347px;
+	background:white;
+	margin-bottom: 10px;
+}
+#chartdiv img {
+	position: absolute;
+	top: 213px;
+	left: 468px;
+}
+#chartdiv a {
+	display: none!important;
+}
+#page1 header {
+	margin-bottom: -4px;
+}
+.chartdesc {
+	background-color: #fff; 
+	padding-top: 20px; 
+	margin:0;
+	color: #000;
+	font-weight:bold;
+}
+#content h3 strong {
+	margin: 6px 0 0 0;
+}

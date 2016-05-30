@@ -1,0 +1,99 @@
+<html>
+  <head>
+
+<% include head.ejs %>
+
+	<style>
+		<% include ../public/stylesheets/chart.css %>
+	</style>
+	
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  	<script type="text/javascript">
+
+    var chart = AmCharts.makeChart("chartdiv", {
+        "theme": "dark",
+        "type": "serial",
+    	"startDuration": 2,
+        "dataProvider": [{
+            "year": "2007",
+            "awards": <%= output1[0] + output1[7]%>,
+            "color": "#FF0F00"
+        }, {
+            "year": "2008",
+            "awards": <%= output1[1] + output1[8]%>,
+            "color": "#FF6600"
+        }, {
+            "year": "2009",
+            "awards": <%= output1[2] + output1[9]%>,
+            "color": "#FF9E01"
+        }, {
+            "year": "2010",
+            "awards": <%= output1[3] + output1[10]%>,
+            "color": "#FCD202"
+        }, {
+            "year": "2011",
+            "awards": <%= output1[4] + output1[11]%>,
+            "color": "#F8FF01"
+        }, {
+            "year": "2012",
+            "awards": <%= output1[5] + output1[12]%>,
+            "color": "#B0DE09"
+        }, {
+            "year": "2013",
+            "awards": <%= output1[6] + output1[13]%>,
+            "color": "#04D215"
+        }],
+        "valueAxes": [{
+            "position": "left",
+            "title": "Total Funds"
+        }],
+        "graphs": [{
+            "balloonText": "[[category]]: <b>[[value]]</b>",
+            "colorField": "color",
+            "fillAlphas": 1,
+            "lineAlpha": 0.1,
+            "type": "column",
+            "valueField": "awards"
+        }],
+        "depth3D": 20,
+    	"angle": 30,
+        "chartCursor": {
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0,
+            "zoomable": false
+        },    
+        "categoryField": "year",
+        "categoryAxis": {
+            "gridPosition": "start",
+            "labelRotation": 90
+        },
+    	"exportConfig":{
+    		"menuTop":"20px",
+            "menuRight":"20px",
+            "menuItems": [{
+            "icon": '/lib/3/images/export.png',
+            "format": 'png'	  
+            }]  
+        }
+    });
+    
+    </script>
+  </head>
+  
+  <body id="page3" class="pageChart">
+	<!-- header -->
+	<div class="bg">
+		<div class="main">
+			 <% include header.ejs %>
+			 <section id="content">
+		    	<p class="chartdesc" align="center">Fund Analysis graph for major Universities in California from year 2007 to 2013</p>
+		    	<div id="chartdiv" ><img src="loading.gif" /></div>
+		    	<% include midder.ejs %> 
+		    </section>
+		</div>
+		<% include footer.ejs %>
+	</div>
+  </body>
+</html>

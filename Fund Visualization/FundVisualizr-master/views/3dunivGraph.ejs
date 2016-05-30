@@ -1,0 +1,107 @@
+<html>
+  <head>
+<% include head.ejs %>
+
+	<style>
+		<% include ../public/stylesheets/chart.css %>
+	</style>
+	
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  	<script type="text/javascript">
+
+    var chart = AmCharts.makeChart("chartdiv", {
+    "type": "serial",
+    "theme": "none",
+    "pathToImages": "http://www.amcharts.com/lib/3/images/",
+    "dataDateFormat": "YYYY-MM-DD HH:NN",
+    "dataProvider": [{
+        "Year": "2007",
+        "Awards": <%= output1[0]%>
+    }, {
+        "Year": "2008",
+        "Awards": <%= output1[1]%>
+    }, {
+        "Year": "2009",
+        "Awards": <%= output1[2]%>
+    }, {
+        "Year": "2010",
+        "Awards": <%= output1[3]%>
+    }, {
+        "Year": "2011",
+        "Awards": <%= output1[4]%>
+    }, {
+        "Year": "2012",
+        "Awards": <%= output1[5]%>
+    }, {
+        "Year": "2013",
+        "Awards": <%= output1[6]%>
+    }],
+    "valueAxes": [{
+        "axisAlpha": 0,
+        "guides": [{
+            "fillAlpha": 0.1,
+            "fillColor": "#000000",
+            "inside": true,
+            "lineAlpha": 0,
+            "toValue": 20,
+            "value": 10
+        }],
+        "position": "left",
+        "showFirstLabel": false,
+        "showLastLabel": false,
+        "tickLength": 0
+    }],
+    "valueAxes": [{
+    	"title": "Funds in Dollars"
+    }],
+    "graphs": [{
+        "balloonText": "[[Year]]<br><b><span style='font-size:14px;'>Awards:[[Awards]]</span></b>",
+        "bullet": "round",
+        "dashLength": 3,
+        "valueField": "Awards"
+    }],
+    "trendLines": [{
+        "finalDate": "",
+        "finalValue": 19,
+        "initialDate": "",
+        "initialValue": 10,
+        "lineColor": "#CC0000"
+    }, {
+        "finalDate": "",
+        "finalValue": 10,
+        "initialDate": "",
+        "initialValue": 16,
+        "lineColor": "#CC0000"
+    }],
+    "chartScrollbar": {},
+    "chartCursor": {},
+    "categoryField": "Year",
+    "categoryAxis": {
+        
+        "axisAlpha": 0,
+        "gridAlpha": 0.1,
+        "inside": true,
+        "minorGridAlpha": 0.1,
+        "minorGridEnabled": true
+    }
+});
+    
+    </script>
+  </head>
+  <body id="page3" class="pageChart">
+	<!-- header -->
+	<div class="bg">
+		<div class="main">
+			 <% include header.ejs %>
+			 <section id="content">
+		    	<p class="chartdesc" align="center">Trendline Funds analysis graph for <%= output1[7]%> from year 2007 to 2013</p>
+		    	<div id="chartdiv" ><img src="loading.gif" /></div>
+		    	<% include midder.ejs %> 
+		    </section>
+		</div>
+		<% include footer.ejs %>
+	</div>
+  </body>
+</html>

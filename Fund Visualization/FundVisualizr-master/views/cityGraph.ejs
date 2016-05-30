@@ -1,0 +1,77 @@
+<html>
+
+  <head>
+	<% include head.ejs %>
+
+	<style>
+	<% include ../public/stylesheets/chart.css %>
+	
+		#chartdiv img{
+			position: absolute;
+			top: 200px;
+			left: 250px;
+
+		}
+		#chartdiv {
+			width:556px;
+		}
+		
+	
+	</style>
+  	
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  	<script type='text/javascript'>
+  //var test = <%= JSON.stringify(output1) %>;
+
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', 'Funds'],
+        ['San Jose', <%= output1[0]%>],
+        ['San Diego', <%= output1[1]%>],
+        ['Los Angeles', <%= output1[2]%>],
+        ['Irvine', <%= output1[3]%>],
+        ['Santa Clara', <%= output1[4]%>],
+        ['Santa Cruz', <%= output1[5]%>],
+        ['Berkeley', <%= output1[6]%>],
+        ['Hayward', <%= output1[7]%>],
+        ['Oakland', <%= output1[8]%>],
+        ['Pittsburg', <%= output1[9]%>],
+        ['Redwood City', <%= output1[10]%>],
+        ['Sacramento', <%= output1[11]%>],
+        ['San Francisco', <%= output1[12]%>],
+        ['Stanford', <%= output1[13]%>],
+        ['Richmond', <%= output1[14]%>]        
+      ]);
+
+      var options = {};
+      options['region'] = 'US';
+      options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
+      options['dataMode'] = 'markers';
+
+      var container = document.getElementById('chartdiv');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    };
+
+    </script>
+  </head>
+  
+  <body id="page3" class="pageChart">
+	<!-- header -->
+	<div class="bg">
+		<div class="main">
+			 <% include header.ejs %>
+			 <section id="content">
+		    	<p class="chartdesc" align="center">Fund analysis graph according to cities of California University</p>
+		    	<div id="chartdiv" ><img src="loading.gif" /></div>
+		    	<% include midder.ejs %> 
+		    </section>
+		</div>
+		<% include footer.ejs %>
+	</div>
+  </body>
+
+</html>

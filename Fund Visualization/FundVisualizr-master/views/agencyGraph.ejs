@@ -1,0 +1,56 @@
+<html>
+  <head>
+<% include head.ejs %>
+
+	<style>
+		<% include ../public/stylesheets/chart.css %>
+	</style>
+
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  	<script type="text/javascript">
+   
+
+   var chart = AmCharts.makeChart("chartdiv", {
+	    "type": "pie",
+	    "theme": "none",
+	    "dataProvider": [{
+	        "Agency": "NASA",
+	        "Awards": <%= output1[0] + output1[1] + output1[2] + output1[3] + output1[4] + output1[5] + output1[6]%>
+	    }, {
+	        "Agency": "NSF",
+	        "Awards":  <%= output1[7] + output1[8] + output1[9] + output1[10] + output1[11] + output1[12] + output1[13]%>
+	    }],
+	    "valueField": "Awards",
+	    "titleField": "Agency",
+	    "outlineAlpha": 0.4,
+	    "depth3D": 15,
+	    "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[Awards]]</b> ([[percents]]%)</span>",
+	    "angle": 30,
+	    "exportConfig":{	
+	      menuItems: [{
+	      icon: '/lib/3/images/export.png',
+	      format: 'png'	  
+	      }]  
+		}
+	});    
+    </script>
+  </head>
+  <body id="page3" class="pageChart">
+	<!-- header -->
+	<div class="bg">
+		<div class="main">
+			 <% include header.ejs %>
+			 <section id="content">
+			 <p class="chartdesc" align="center">Share of Funds awarded by Organization in 2013.</p>
+		    	
+		    	<p class="chartdesc" align="center">Good news!! NSF funded 88.33% of the grants available in year 2013. So Science is still the field encouraged among universities.</p>
+		    	<div id="chartdiv" ><img src="loading.gif" /></div>
+		    	<% include midder.ejs %> 
+		    </section>
+		</div>
+		<% include footer.ejs %>
+	</div>
+  </body>
+</html>

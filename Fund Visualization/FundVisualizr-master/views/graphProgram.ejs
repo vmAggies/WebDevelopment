@@ -1,0 +1,85 @@
+<html>
+  <head>
+
+<% include head.ejs %>
+	<style>
+		<% include ../public/stylesheets/chart.css %>
+	</style>
+		
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+  	<script type="text/javascript">
+  //	alert("hi");
+  //  var test = <%= JSON.stringify(output1) %>;
+   //alert(<%= output1[6]%>);
+   
+
+   var chart = AmCharts.makeChart("chartdiv", {
+	    "type": "pie",
+	    "theme": "light",
+	    "dataProvider": [{
+	        "Program": "AERONOMY",
+	        "Awards": <%= output1[0]%>
+	    }, {
+	        "Program": "APPLIED MATHEMATICS",
+	        "Awards":  <%= output1[1]%>
+	    }, {
+	        "Program": "ATOMIC THEORY",
+	        "Awards":  <%= output1[2]%>
+	    }, {
+	        "Program": "BIOMEDICAL ENGINEERING",
+	        "Awards":  <%= output1[3]%>
+	    }, {
+	        "Program": "COMPUTER SYSTEMS",
+	        "Awards":  <%= output1[4]%>
+	    }, {
+	        "Program": "COMPUTATIONAL MATHEMATICS",
+	        "Awards":  <%= output1[5]%>
+	    }, {
+	        "Program": "DATA INFRASTRUCTURE",
+	        "Awards":  <%= output1[6]%>
+	    }, {
+	        "Program": "ECONOMICS",
+	        "Awards":  <%= output1[7]%>
+	    }, {
+	        "Program": "OPTICAL PHYSICS",
+	        "Awards":  <%= output1[8]%>
+	    }, {
+	        "Program": "POLITICAL SCIENCE",
+	        "Awards":  <%= output1[9]%>
+	    }, {
+	        "Program": "SOCIOLOGY",
+	        "Awards":  <%= output1[10]%>
+	    }],
+	    "valueField": "Awards",
+	    "titleField": "Program",
+	    "outlineAlpha": 0.4,
+	    "depth3D": 15,
+	    "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[Awards]]</b> ([[percents]]%)</span>",
+	    "angle": 30,
+	    "exportConfig":{	
+	      menuItems: [{
+	      icon: '/lib/3/images/export.png',
+	      format: 'png'	  
+	      }]  
+		}
+	});
+    </script>
+  </head>
+  
+  <body id="page3" class="pageChart">
+	<!-- header -->
+	<div class="bg">
+		<div class="main">
+			 <% include header.ejs %>
+			 <section id="content">
+		    	<p class="chartdesc" align="center">Analysis among 15 different Programs of Universities in California for year 2013</p>
+		    	<div id="chartdiv" ><img src="loading.gif" /></div>
+		    	<% include midder.ejs %> 
+		    </section>
+		</div>
+		<% include footer.ejs %>
+	</div>
+  </body>
+</html>

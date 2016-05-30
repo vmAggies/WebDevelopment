@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fund Analysis of Universities in California</title>
+<meta charset="utf-8">
+<% include head.ejs %>
+<style>
+	.row-3 {
+		display: block;
+	}
+</style>
+</head>
+
+<body id="page1">
+<!-- header -->
+
+<div class="bg">
+	<div class="main">
+	<% include header.ejs %>
+	<div class="padding" style="margin-top: -10px;">
+        <div class="box-bg margin-bot" style="text-align: center; background-color: #fff;">
+        	<a href="/services" class="button-2">Get Started</a> 
+        </div>
+        <div class="wrapper">
+          <div class="col-3">
+            <div class="indent">
+              <p class="color-4 p1"></p>
+              <div class="wrapper">
+                <figure class="img-indent3"><img src="page1-img1.png" alt="" /></figure>
+                <div class="extra-wrap">
+                  <div class="indent2"> Our goal is to empower an individual’s knowledge with statistics of grant amount across various universities and funding organization and provide the user with charts that will enable him to comprehend and make the right choice of university and field.  The term “Right Choice” in any field is subjective of the data used while making the choice. Making the relevant data available to the user has been made possible by various technologies and internet. The use of statistic data is not limited to individual but can be used by various organizations to make business decisions</div>
+                </div>
+              </div>
+			</div>
+          </div>
+        </div>
+      </div>
+    <!-- footer -->
+    <% include footer.ejs %> 
+  </div>
+</div>
+<script type="text/javascript">Cufon.now();</script>
+<script type="text/javascript">
+$(function () {
+    $('.slider')._TMS({
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: '.play',
+        duration: 800,
+        easing: 'easeOutQuad',
+        preset: 'simpleFade',
+        pagination: false,
+        slideshow: 3000,
+        numStatus: false,
+        pauseOnHover: true,
+        banners: true,
+        waitBannerAnimation: false,
+        bannerShow: function (banner) {
+            banner.hide().fadeIn(500)
+        },
+        bannerHide: function (banner) {
+            banner.show().fadeOut(500)
+        }
+    });
+})
+</script>
+</html>
