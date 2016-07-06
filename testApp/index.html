@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://select2.github.io/dist/js/select2.full.js"></script>
+    <link rel="stylesheet" href="https://select2.github.io/dist/css/select2.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link href="app/css/tabs.css" rel="stylesheet" type="text/css">
+    <script src="app/js/tabs.js"></script>
+    <script src="app/js/ajaxScript.js"></script>
+</head>
+<body>
+    <p>Partner Black listing</p>
+    <ul class="tab">
+        <li><a href="#" class="tablinks" onclick="openCity(event,'Add')">Add</a></li>
+        <li><a href="#" class="tablinks" onclick="openCity(event,'Remove')">Remove</a></li>
+    </ul>
+
+    <div id="Add" class="tabcontent">
+        <h3> Please follow below steps to black list a partner</h3>
+        <p>Search for partner below</p>
+        <select multiple id="e1" style="width: 300px">
+            <option></option>
+        </select>
+        <p></p>
+        <p>Click the below button to Block the above selected partners</p>
+        <button id="the-thing-that-opens-your-alert" type="button" class="btn btn-primary">Block</button>
+        <div id="alert-success" class="alert alert-success alert-block fade">
+            <button href="#" type="button" class="close">&times;</button>
+            <p>Success, the partners have been blocked</p>
+        </div>
+
+        <div id="alert-failure" class="alert alert-success alert-block fade">
+            <button href="#" type="button" class="close">&times;</button>
+            <p>Success, the partners have been blocked</p>
+        </div>
+
+    </div>
+
+    <div id="Remove" class="tabcontent">
+        <h3>Paris</h3>
+    </div>
+
+</body>
+</html>
